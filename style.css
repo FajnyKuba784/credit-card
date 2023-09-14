@@ -1,0 +1,56 @@
+#body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+#karta{
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas: 
+    "logo"
+    "reszta";
+    height: 300px;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blue;
+}
+
+#reszta{
+
+    grid-area: reszta;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas: 
+    "numer numer"
+    "imie data";
+
+}
+
+#logo{
+
+    grid-area: logo;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap :20px;
+}
+
+
+#numer{
+    grid-area: numer;
+}
+#imie{
+    grid-area: imie;
+}   
+#data{
+    grid-area: data;
+}
