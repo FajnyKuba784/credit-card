@@ -9,16 +9,17 @@
 </head>
 <body id="body">
     <div id="karta">
+       
         <div id="logo"><img src="sex.png" id="img"></div>
         <div id="reszta">
             <div id="numer">
-                <h2 id="numertext"></h2>
+                <h2 id="numertext"> *** *** *** ****</h2>
             </div>
             <div id="imie">
-                <h2 id="imiet"></h2>
+                <h2 id="imiet">******* *******</h2>
             </div>
             <div id="data">
-                <h2 id="datat"></h2>
+                <h2 id="datat">**/**</h2>
             </div>
         </div>
 
@@ -28,13 +29,16 @@
     <input type="text" placeholder="numer karty" id="numeri" onkeyup="zamiennumer()" onkeypress="return /[0-9]/i.test(event.key)" maxlength="13">
     <input type="text" placeholder="imie i nazwisko" id="imiei" onkeyup="nazw()" maxlength="20">
     <input type="date" id="datai" onchange="date()">
-        <label for="1">1</label>
-        <input type="radio" id="1" name="image" value="2" onchange="img(id)">
-        <label for="2">2</label>
-        <input type="radio" id="2" name="image" value="3" onchange="img(id)">
-        <label for="3">3</label>
-        <input type="radio" id="3" name="image" value="3" onchange="img(id)">
-
+    <div id="zdj">
+         
+       
+        <label for="1"><img src="r.jfif" alt="" class="imgs" id="1" name="image" value="2" onclick="img(id)"></label>
+      
+        <label for="2"><img src="th.jfif" alt="" class="imgs" id="2" name="image" value="2" onclick="img(id)"></label>
+     
+        <label for="3"><img src="pobierz.jfif" alt="" class="imgs" id="3" name="image" value="2" onclick="img(id)"></label>
+        
+    </div>
 
     <script src="app.js"></script>
 </body>

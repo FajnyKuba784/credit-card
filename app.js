@@ -15,16 +15,34 @@ function zamiennumer(){
 
     let nowyTekst = '';
     
-  
+
+    
+    
+    
     if(tekst.length<=13){
-    for (let i = 0; i < tekst.length; i++) {
-       
-        nowyTekst += tekst[i];
-        
-        if ((i + 1) % 3 === 0 && i !== tekst.length - 1) {
-            if(nowyTekst.length<=13){
-            nowyTekst += ' ';}
+      for (let i = 0; i <=12; i++) {
+        if(numer[i]!= undefined){
+          
+          nowyTekst += tekst[i];
+
+          if ((i + 1) % 3 === 0 && i !== tekst.length - 1) {
+              if(nowyTekst.length<=13){
+              nowyTekst += ' ';}
+          }
         }
+        
+       
+    
+          
+  
+        
+        else{
+          nowyTekst+="*"
+          if((i+1)%3==0 && i !== tekst.length - 1){
+            if(nowyTekst.length<=13){
+              nowyTekst+=" "}
+          }
+      }
         
       
     }
@@ -63,38 +81,96 @@ document.getElementById("datat").innerHTML = withSlashes
 
 
 function img(id){
-   
-    console.log(id)
-    if(id==1){
-        document.getElementById("karta").style.backgroundImage ="url('R.jfif')"
-    }
-    else if(id==2){
-        document.getElementById("karta").style.backgroundImage ="url('th.jfif')"
-    }
-    
-
-else{
+  document.getElementById("karta").classList.add("flip-out-hor-top")
+ 
+  setTimeout(function() {
+    document.getElementById("1").style.border = ""
+    document.getElementById("2").style.border = ""
+  document.getElementById("3").style.border = ""
+  console.log(id)
+  if(id==1){
+    document.getElementById("karta").classList.remove("flip-out-hor-top")
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")
+    document.getElementById("karta").style.backgroundImage ="url('R.jfif')"
+    document.getElementById("1").style.border = "10px solid #ffff00"
+    document.getElementById("karta").classList.add("flip-in-hor-bottom")
+  }
+  else if(id==2){
+    document.getElementById("karta").classList.remove("flip-out-hor-top")
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")
+    document.getElementById("karta").style.backgroundImage ="url('th.jfif')"
+    document.getElementById("2").style.border = "10px solid #ffff00"
+    document.getElementById("karta").classList.add("flip-in-hor-bottom")
+  }
+  
+  
+  else if(id==3){
+    document.getElementById("karta").classList.remove("flip-out-hor-top")
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")
     document.getElementById("karta").style.backgroundImage ="url('pobierz.jfif')"
+    document.getElementById("3").style.border = "10px solid #ffff00"
+    document.getElementById("karta").classList.add("flip-in-hor-bottom")
     
+  }
+  setTimeout(function(){
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")}  ,500
+
+  )
+}
+
+,500)
+}
+const el = document.getElementById('karta')
+
+el.addEventListener('mousedown',obroc)
+
+
+el.addEventListener('mouseup', obrocz)
+
+
+
+function obroc(e){
+
+console.log("sex")
+document.getElementById("karta").classList.remove("flip-out-hor-top")
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")
+    document.getElementById("karta").classList.add("flip-out-hor-top")
+   const img = document.createElement("img")
+  img.src = "bullets.jfif"
+  img.style.size = "cover"
+  img.setAttribute("id","imgs1")
+  img.style.zIndex - "2000"
+  document.getElementById("body").appendChild(img)
+  document.getElementById("imgs1").classList.add("flip-in-hor-bottom")
+  setTimeout(document.getElementById("karta").classList.remove("flip-in-hor-bottom"),500)
+}
+function obrocz(){
+  console.log("sex")
+  document.getElementById("karta").classList.remove("flip-out-hor-top")
+  document.getElementById("karta").classList.remove("flip-in-hor-bottom")
+document.getElementById("karta").classList.add("flip-in-hor-bottom")
+const img = document.getElementById("imgs1")
+
+document.getElementById("body").removeChild(img)
+document.getElementById("imgs1").classList.add("flip-out-hor-top")
+img.style.zIndex = "-20"
+
+
+
+
+setTimeout(
+  function(){
+  document.getElementById("karta").classList.remove("flip-out-hor-top")
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")},500
+)
 
 }
-}
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 /* Store the element in el */
-let el = document.getElementById('karta')
 
 /* Get the height and width of the element */
 const height = el.clientHeight
@@ -143,11 +219,26 @@ el.addEventListener('mouseout', function() {
 })
 
 /* Add listener for mousedown event, to simulate click */
-el.addEventListener('mousedown', function() {
+/*el.addEventListener('mousedown', function() {
   el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
 })
 
 /* Add listener for mouseup, simulate release of mouse click */
-el.addEventListener('mouseup', function() {
+/*el.addEventListener('mouseup', function() {
   el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-})
+})*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
