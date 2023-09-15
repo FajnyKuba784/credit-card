@@ -139,7 +139,7 @@ document.getElementById("karta").classList.remove("flip-out-hor-top")
   img.src = "bullets.jfif"
   img.style.size = "cover"
   img.setAttribute("id","imgs1")
-  img.style.zIndex - "2000"
+  img.style.zIndex = "2000"
   document.getElementById("body").appendChild(img)
   document.getElementById("imgs1").classList.add("flip-in-hor-bottom")
   setTimeout(document.getElementById("karta").classList.remove("flip-in-hor-bottom"),500)
@@ -148,21 +148,24 @@ function obrocz(){
   console.log("sex")
   document.getElementById("karta").classList.remove("flip-out-hor-top")
   document.getElementById("karta").classList.remove("flip-in-hor-bottom")
+  document.getElementById("imgs1").classList.remove("flip-out-hor-top")
+  document.getElementById("imgs1").classList.remove("flip-in-hor-bottom")
 document.getElementById("karta").classList.add("flip-in-hor-bottom")
 const img = document.getElementById("imgs1")
 
-document.getElementById("body").removeChild(img)
 document.getElementById("imgs1").classList.add("flip-out-hor-top")
-img.style.zIndex = "-20"
+document.getElementById("imgs1").removeChild(img)
+
+  img.style.zIndex = "-20"
 
 
 
 
-setTimeout(
-  function(){
-  document.getElementById("karta").classList.remove("flip-out-hor-top")
-    document.getElementById("karta").classList.remove("flip-in-hor-bottom")},500
-)
+  
+    document.getElementById("karta").classList.remove("flip-in-hor-bottom")
+    document.getElementById("imgs1").classList.remove("flip-out-hor-top")
+    document.getElementById("imgs1").classList.remove("flip-in-hor-bottom")
+
 
 }
 
